@@ -1,13 +1,19 @@
 <?php
-
 namespace App\Http\Controllers\Frontend\User;
-
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\User\UserRequest;
+use App\Modules\Services\User\UserService;
 
 class UserController extends Controller
 {
+    protected $user;
+
+    public function __construct(UserService $user)
+    {
+        $this->user = $user;
+    }
+
     /**
      * Display a listing of the user.
      *
@@ -38,7 +44,13 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        dd($request->all());
+        $userDetails = array_except($request->all(), ['_token']);
+        if($this->user->create($userDetails)) {
+
+            return redirect()->route('users.index')->with('success', 'User created successfully.');
+        }
+
+        return redirect()->route('users.index')->with('error', 'User could not be created.');
     }
 
     /**
