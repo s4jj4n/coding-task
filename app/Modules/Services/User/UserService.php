@@ -14,7 +14,7 @@ class UserService extends Service
 
     public function __construct()
     {
-        $this->file = 'users.csv';
+        $this->file = app_path('users.csv');
     }
 
     /**
