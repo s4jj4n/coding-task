@@ -1,26 +1,41 @@
-# Laravel PHP Framework
+#Coding task for Software Engineer
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+The task is to build a part of client section of a system. It should be done in max 3-4 days after receiving it if not communicated otherwise.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+#Context
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+This is a simple coding task not a coding challenge. This has only Create and Read of the small CRUD part for the client section of the application.
 
-## Official Documentation
+#Task
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Things to do
 
-## Contributing
+1. Create a form to get
+    i. Name
+    ii. Gender
+    iii. Phone
+    iv. Email
+    v. Address
+    vi. Nationality
+    vii. Date of birth
+    viii. Education background
+    ix. Preferred mode of contact (select one from email, phone, none)
+2. You can be creative with the fields.
+3. Add relevant validation to the form both frontend (js) and backend (php)
+4. After form submission, if fields are valid save to a csv file
+5. Show all clients pulled in from the CSV as another page
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+#Deploying to Heroku
 
-## Security Vulnerabilities
+1. Create a free account in https://www.heroku.com/ and login
+2. Create a new app form heroku dashboard
+3. Create a new project in github
+4. Push the project codes from your local to github
+5. Link the github project to the newly created app in heroku
+6. Deploy the project from heroku dashboard by clicking the Deploy Branch
+7. Heroku will automatically deploy the project to a newly generated url under the sub-domain of herokuapp.com
+8. Example: http://rocky-castle-41635.herokuapp.com/public/users
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
 ## License
 
