@@ -21,8 +21,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = $this->user->all();
 
-        return view('frontend.user.index');
+        return view('frontend.user.index', compact('users'));
     }
 
     /**
@@ -61,8 +62,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $user = $this->user->find($id);
+        if(!$user)
+            abort(404);
 
-        return view('frontend.user.show');
+        return view('frontend.user.show', compact('user'));
     }
 
 }

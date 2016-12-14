@@ -10,9 +10,11 @@ use Exception;
  */
 class UserService extends Service
 {
+    protected $file;
+
     public function __construct()
     {
-
+        $this->file = 'users.csv';
     }
 
     /**
@@ -24,7 +26,7 @@ class UserService extends Service
     public function create(array $userData)
     {
         try {
-            $fp = fopen('file.csv', 'a');
+            $fp = fopen($this->file, 'a');
             fputcsv($fp, $userData);
             fclose($fp);
 
@@ -38,25 +40,36 @@ class UserService extends Service
 
     /**
      * Get all users
+     *
+     * @return array
      * @return \Illuminate\Database\Eloquent\Collection
      */
-
     public function all()
     {
+        $userData = [];
+        if (($handle = fopen($this->file, "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                $userData[] = $data;
+            }
+            fclose($handle);
+        }
 
+        return $userData;
     }
 
     /**
-     * Get the user with particular id or any specified field
-     * @param $user
-     * @param string $field
+     * Get the user with particular id
+     *
+     * @param $id
      * @return array
      */
 
-    public function find($user, $field = 'id')
+    public function find($id)
     {
         try {
+            $users = $this->all();
 
+            return isset($users[$id]) ? $users[$id] : [];
         } catch (Exception $e) {
 
             return null;
