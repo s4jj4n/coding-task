@@ -1,5 +1,9 @@
 #Coding task for Software Engineer
 
+[![Code Climate](https://codeclimate.com/github/s4jj4n/coding-task/badges/gpa.svg)](https://codeclimate.com/github/s4jj4n/coding-task)
+[![Test Coverage](https://codeclimate.com/github/s4jj4n/coding-task/badges/coverage.svg)](https://codeclimate.com/github/s4jj4n/coding-task/coverage)
+[![Issue Count](https://codeclimate.com/github/s4jj4n/coding-task/badges/issue_count.svg)](https://codeclimate.com/github/s4jj4n/coding-task)
+
 The task is to build a part of client section of a system. It should be done in max 3-4 days after receiving it if not communicated otherwise.
 
 #Context
