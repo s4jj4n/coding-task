@@ -46,7 +46,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $userDetails = array_except($request->all(), ['_token']);
-        if($this->user->create($userDetails)) {
+        if ($this->user->create($userDetails)) {
 
             return redirect()->route('users.index')->with('success', 'User created successfully.');
         }
@@ -63,7 +63,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = $this->user->find($id);
-        if(!$user)
+        if (!$user)
             abort(404);
 
         return view('frontend.user.show', compact('user'));

@@ -47,11 +47,15 @@ class UserService extends Service
     public function all()
     {
         $userData = [];
-        if (($handle = fopen($this->file, "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $userData[] = $data;
+        try {
+            if (($handle = fopen($this->file, "r")) !== FALSE) {
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    $userData[] = $data;
+                }
+                fclose($handle);
             }
-            fclose($handle);
+        } catch (Exception $e) {
+
         }
 
         return $userData;
