@@ -28,7 +28,11 @@ class UserRequest extends Request
             'phone' => 'required',
             'gender' => 'required',
             'email' => 'required|email',
-            'date_of_birth' => 'required|date'
+            'date_of_birth' => 'required|date',
+            'address' => 'required',
+            'nationality' => 'required',
+            'education_background' => 'required',
+            'preferred_mode_of_contact' => 'required'
         ];
     }
 }

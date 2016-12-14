@@ -1,5 +1,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/css/jquery-ui.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/css/bootstrap.css') }}">
 
     <!-- Website CSS style -->
